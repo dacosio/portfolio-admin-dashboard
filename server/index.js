@@ -12,7 +12,15 @@ import salesRoutes from "./routes/sales.js";
 
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import Transaction from "./models/Transaction.js";
+import User from "./models/User.js";
+
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js";
 
 dotenv.config();
 const app = express();
@@ -40,6 +48,10 @@ mongoose
     console.log("Database Connected Successfully!");
     app.listen(PORT, () => {
       console.log(`Server is listening on port ${PORT}`);
+      // User.insertMany(dataUser);
+      // Product.insertMany(dataProduct);
+      // ProductStat.insertMany(dataProductStat);
+      // Transaction.insertMany(dataTransaction);
     });
   })
   .catch((err) => console.log("Error connecting to database", err));
