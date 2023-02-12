@@ -52,11 +52,12 @@ mongoose
     console.log("Database Connected Successfully!");
     app.listen(PORT, () => {
       console.log(`Server is listening on port ${PORT}`);
-      // User.insertMany(dataUser);
-      // Product.insertMany(dataProduct);
-      // ProductStat.insertMany(dataProductStat);
-      // Transaction.insertMany(dataTransaction);
-      // AffiliateStat.insertMany(dataAffiliateStat);
+      User.insertMany(dataUser);
+      Product.insertMany(dataProduct);
+      ProductStat.insertMany(dataProductStat);
+      Transaction.insertMany(dataTransaction);
+      OverallStat.insertMany(dataOverallStat);
+      AffiliateStat.insertMany(dataAffiliateStat);
     });
   })
   .catch((err) => console.log("Error connecting to database", err));
